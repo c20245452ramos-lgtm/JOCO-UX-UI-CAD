@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" fill="none">
+  <defs>
+    <pattern id="plan-grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0V28" stroke="#63B8A7" stroke-opacity=".2"/>
+    </pattern>
+    <linearGradient id="plan-bg" x1="0" y1="0" x2="1200" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#273447"/>
+      <stop offset="1" stop-color="#151923"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#plan-bg)" d="M0 0h1200v700H0z"/>
+  <path fill="url(#plan-grid)" d="M0 0h1200v700H0z"/>
+  <rect x="74" y="58" width="1052" height="584" rx="8" stroke="#C5A46D" stroke-opacity=".65" stroke-width="3"/>
+  <path stroke="#F3EFE7" stroke-width="10" d="M212 180h298v184H212zM510 180h270v126H510zM510 306v58h270M212 364v166h206V364M418 364h362v166H418zM780 180v350h170V180zM212 530h738"/>
+  <path stroke="#ED6A4E" stroke-width="4" d="M242 210h90v120h-90zM545 210h200v65H545zM816 216h98v94h-98z"/>
+  <path stroke="#F3C66B" stroke-width="3" d="M212 146h568m-604 34v184m640-184v184M188 364v166m604-350h170m-170 0v350"/>
+  <path stroke="#F3EFE7" stroke-opacity=".8" stroke-width="2" d="M212 132v-24m568 24v-24m-580 14h592M188 364h-24m24 166h-24m14-178v190"/>
+  <circle cx="1018" cy="566" r="12" fill="#ED6A4E"/>
+  <path stroke="#F3EFE7" stroke-opacity=".5" stroke-width="2" d="M986 566h64m-32-32v64"/>
+  <text x="98" y="92" fill="#F3EFE7" font-family="Arial,sans-serif" font-size="18" letter-spacing="4">AUTOCAD · SPACE PLAN</text>
+  <text x="960" y="614" fill="#C5A46D" font-family="Arial,sans-serif" font-size="13" letter-spacing="2">SCALE 1:100</text>
+</svg>
