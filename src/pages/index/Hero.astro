@@ -11,8 +11,10 @@
             </p>
 
             <h1 id="nameTitle"
+                aria-label="Jory Myco."
                 class="mt-5 text-5xl font-black uppercase leading-none md:text-7xl">
-                Jory<br>Myco<span class="text-[#C5A46D]">.</span>
+                <span class="scramble-word" data-scramble>Jory</span><br>
+                <span class="scramble-word" data-scramble>Myco</span><span class="name-period">.</span>
             </h1>
 
             <p class="mt-5 font-medium leading-relaxed text-gray-400">
@@ -56,3 +58,81 @@
 
     </div>
 </section>
+
+<script>
+    import { gsap } from "gsap";
+
+    const scrambleCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    const titleWords = Array.from(
+        document.querySelectorAll<HTMLElement>("#nameTitle [data-scramble]"),
+    );
+    const finalTexts = titleWords.map((word) => word.textContent ?? "");
+    const title = document.querySelector<HTMLElement>("#nameTitle");
+
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        let completedWords = 0;
+
+        if (title) {
+            gsap.fromTo(
+                title,
+                { opacity: 0 },
+                { opacity: 1, duration: 0.45, ease: "power2.out" },
+            );
+        }
+
+        titleWords.forEach((word, wordIndex) => {
+            const finalText = finalTexts[wordIndex];
+            const progress = { value: 0 };
+
+            gsap.to(progress, {
+                value: finalText.length,
+                delay: wordIndex * 0.18,
+                duration: 0.9,
+                ease: "none",
+                onUpdate: () => {
+                    const resolvedCharacters = Math.floor(progress.value);
+                    word.textContent = Array.from(finalText)
+                        .map((character, index) => {
+                            if (index < resolvedCharacters) return character;
+                            return scrambleCharacters[
+                                Math.floor(Math.random() * scrambleCharacters.length)
+                            ];
+                        })
+                        .join("");
+                },
+                onComplete: () => {
+                    word.textContent = finalText;
+                    completedWords += 1;
+
+                    if (completedWords === titleWords.length && title) {
+                        gsap.to(title, {
+                            opacity: 0,
+                            duration: 0.2,
+                            ease: "power1.in",
+                            onComplete: () => {
+                                titleWords.forEach((titleWord, index) => {
+                                    titleWord.textContent = finalTexts[index];
+                                });
+                                gsap.to(title, {
+                                    opacity: 1,
+                                    duration: 0.45,
+                                    ease: "power2.out",
+                                });
+                            },
+                        });
+                    }
+                },
+            });
+        });
+    }
+</script>
+
+<style>
+    #nameTitle .scramble-word {
+        color: inherit;
+    }
+
+    #nameTitle .name-period {
+        color: #c5a46d;
+    }
+</style>

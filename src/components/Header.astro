@@ -31,8 +31,78 @@
             <a href="#projects">PROJECTS</a>
             <a href="#contact">CONTACT</a>
         </div>
+
+        <button class="refresh-button" type="button" aria-label="Refresh page" title="Refresh page">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 11a8 8 0 0 0-14.9-3M5 8h4M5 8V4M4 13a8 8 0 0 0 14.9 3M19 16h-4m4 0v4"></path>
+            </svg>
+        </button>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch theme">
+            <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"></circle>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path>
+            </svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.2 15.1A8.5 8.5 0 0 1 8.9 3.8a8.5 8.5 0 1 0 11.3 11.3Z"></path>
+            </svg>
+        </button>
     </nav>
 </header>
+
+<script is:inline>
+    const themeToggle = document.querySelector(".theme-toggle");
+    const refreshButton = document.querySelector(".refresh-button");
+
+    refreshButton?.addEventListener("click", () => {
+        window.location.reload();
+    });
+
+    function updateThemeButton() {
+        if (!themeToggle) return;
+        const isDark = document.documentElement.dataset.theme === "dark";
+        themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+        themeToggle.setAttribute("aria-pressed", String(isDark));
+    }
+
+    themeToggle?.addEventListener("click", () => {
+        const isDark = document.documentElement.dataset.theme === "dark";
+        const nextTheme = isDark ? "light" : "dark";
+        document.documentElement.dataset.theme = nextTheme;
+        localStorage.setItem("theme", nextTheme);
+        document.querySelector('meta[name="theme-color"]')?.setAttribute(
+            "content",
+            nextTheme === "dark" ? "#191a24" : "#f3efe7"
+        );
+        updateThemeButton();
+    });
+
+    updateThemeButton();
+</script>
+
+<script>
+    import { gsap } from "gsap";
+
+    const headerMotion = gsap.matchMedia();
+
+    headerMotion.add("(prefers-reduced-motion: no-preference)", () => {
+        const intro = gsap.timeline({
+            defaults: { duration: 0.45, ease: "power2.out" },
+        });
+
+        intro
+            .from(".site-header .brand", { opacity: 0, x: -18 })
+            .from(
+                ".site-header .nav-links a",
+                { opacity: 0, y: -10, stagger: 0.07 },
+                "-=0.2",
+            )
+            .from(
+                ".site-header .refresh-button, .site-header .theme-toggle",
+                { opacity: 0, scale: 0.8, stagger: 0.1 },
+                "-=0.2",
+            );
+    });
+</script>
 
 <style>
     .site-header {
@@ -148,6 +218,66 @@
     .nav-links a:hover,
     .nav-links a:focus-visible {
         color: #c5a46d;
+    }
+
+    .theme-toggle,
+    .refresh-button {
+        width: 42px;
+        height: 42px;
+        flex-shrink: 0;
+        display: grid;
+        place-items: center;
+        border: 1px solid rgba(197, 164, 109, 0.75);
+        border-radius: 999px;
+        background: transparent;
+        color: #c5a46d;
+        cursor: pointer;
+        transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+    }
+
+    .theme-toggle:hover,
+    .refresh-button:hover {
+        background: #c5a46d;
+        color: #111111;
+        transform: translateY(-1px);
+    }
+
+    .theme-toggle:focus-visible,
+    .refresh-button:focus-visible {
+        outline: 2px solid #c5a46d;
+        outline-offset: 3px;
+    }
+
+    .theme-toggle svg,
+    .refresh-button svg {
+        grid-area: 1 / 1;
+        width: 19px;
+        height: 19px;
+        fill: none;
+        stroke: currentColor;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1.8;
+        transition: opacity 160ms ease, transform 160ms ease;
+    }
+
+    .refresh-button svg {
+        opacity: 1;
+    }
+
+    .moon-icon {
+        opacity: 0;
+        transform: rotate(-30deg) scale(0.7);
+    }
+
+    :global(html[data-theme="dark"]) .sun-icon {
+        opacity: 0;
+        transform: rotate(30deg) scale(0.7);
+    }
+
+    :global(html[data-theme="dark"]) .moon-icon {
+        opacity: 1;
+        transform: rotate(0) scale(1);
     }
 
     @media (max-width: 720px) {

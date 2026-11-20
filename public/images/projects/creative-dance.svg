@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" fill="none">
+  <defs>
+    <linearGradient id="dance-bg" x1="30" y1="0" x2="1140" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17343A"/>
+      <stop offset=".52" stop-color="#202338"/>
+      <stop offset="1" stop-color="#3C2438"/>
+    </linearGradient>
+    <linearGradient id="ribbon" x1="120" y1="350" x2="1080" y2="330" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#63B8A7" stop-opacity=".08"/>
+      <stop offset=".5" stop-color="#F3C66B" stop-opacity=".78"/>
+      <stop offset="1" stop-color="#E9A3BD" stop-opacity=".12"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#dance-bg)" d="M0 0h1200v700H0z"/>
+  <circle cx="600" cy="350" r="248" fill="#F3EFE7" fill-opacity=".035"/>
+  <path stroke="url(#ribbon)" stroke-linecap="round" stroke-width="14" d="M73 452c207-270 329-262 502-42s335 237 552-112"/>
+  <path stroke="#F3EFE7" stroke-opacity=".12" stroke-width="2" d="M0 590c273-89 877-89 1200 0M0 620c273-89 877-89 1200 0"/>
+  <circle cx="411" cy="175" r="33" fill="#D88E61"/>
+  <path fill="#171924" d="M379 175c4-48 59-57 83-19-27-9-53-4-83 19Z"/>
+  <path fill="#ED6A4E" d="m390 216 55-4 68 129-67 52-84-51 28-126Z"/>
+  <path stroke="#D88E61" stroke-linecap="round" stroke-width="22" d="m405 233-93-58-62 9m172 56 93-72 65-19"/>
+  <path stroke="#D88E61" stroke-linecap="round" stroke-width="21" d="m432 376-77 90-29 91m105-173 68 62 77 17"/>
+  <path fill="#C74766" d="m388 349 72-20c85 43 145 77 208 136-81 58-190 85-347 51 9-76 30-130 67-167Z"/>
+  <path stroke="#F3C66B" stroke-width="7" d="m409 367-55 145m116-160-23 171m72-147 30 157m11-128 67 94"/>
+  <circle cx="799" cy="197" r="31" fill="#D88E61"/>
+  <path fill="#171924" d="M770 196c4-45 54-53 77-18-26-8-50-3-77 18Z"/>
+  <path fill="#63B8A7" d="m777 235 53-4 56 114-64 45-70-43 25-112Z"/>
+  <path stroke="#D88E61" stroke-linecap="round" stroke-width="20" d="m791 251-68-76-65-5m162 68 83-60 61 4"/>
+  <path stroke="#D88E61" stroke-linecap="round" stroke-width="19" d="m811 365-43 87-61 54m122-130 82 48 73 2"/>
+  <path fill="#F3C66B" d="m776 345 65-13c72 44 131 82 182 141-77 47-175 63-307 30 9-70 29-121 60-158Z"/>
+  <path stroke="#F3EFE7" stroke-opacity=".75" stroke-width="6" d="m798 359-34 134m88-149-8 157m57-132 24 143m10-116 56 82"/>
+  <path fill="#F3C66B" d="m167 205 8 19 20 8-20 8-8 20-8-20-19-8 19-8zM1030 381l6 15 16 6-16 6-6 16-6-16-16-6 16-6z"/>
+</svg>

@@ -1,90 +1,202 @@
-
-<section id="projects" class="bg-[#111111] px-6 py-20 text-white md:px-12">
-
-    <!-- Section Heading -->
-    <div class="mx-auto mb-14 max-w-3xl text-center">
-        <p class="mb-3 text-sm font-bold tracking-[0.3em] text-[#C5A46D]">
-            OUR PORTFOLIO
-        </p>
-
-        <h2 class="mb-5 text-4xl font-black md:text-5xl">
-            Featured Projects.
-        </h2>
-
-        <p class="text-gray-400">
+<section id="projects" class="projects-section">
+    <div class="projects-heading">
+        <p class="projects-eyebrow">OUR PORTFOLIO</p>
+        <h2>Featured Projects.</h2>
+        <p class="projects-intro">
             Every project represents our teamwork, creativity, and passion for artistic expression.
         </p>
     </div>
 
-    <!-- Project Cards -->
-    <div class="mx-auto grid max-w-6xl gap-6 md:grid-cols-3">
-
-        <!-- Project 1 -->
-        <div class="group overflow-hidden border border-[#C5A46D]/40 bg-[#1A1A1A] transition duration-300 hover:-translate-y-2 hover:border-[#C5A46D]">
-
-            <div class="flex h-52 items-center justify-center bg-[#252525]">
-                <span class="text-6xl font-black text-[#C5A46D]">01</span>
+    <div class="projects-grid">
+        <article class="project-card">
+            <div class="project-image">
+                <img
+                    src="/images/projects/stage-performance.svg"
+                    alt="A dancer performing beneath a spotlight on a theater stage"
+                    width="1200"
+                    height="700"
+                    loading="lazy"
+                />
             </div>
-
-            <div class="p-7">
-                <p class="mb-3 text-xs font-bold tracking-widest text-[#C5A46D]">
-                    DANCE PERFORMANCE
-                </p>
-
-                <h3 class="mb-3 text-2xl font-bold">
-                    Stage Performance
-                </h3>
-
-                <p class="leading-7 text-gray-400">
+            <div class="project-copy">
+                <p class="project-category">DANCE PERFORMANCE</p>
+                <h3>Stage Performance</h3>
+                <p>
                     We create meaningful performances through synchronized movements and creative storytelling.
                 </p>
             </div>
-        </div>
+        </article>
 
-        <!-- Project 2 -->
-        <div class="group overflow-hidden border border-[#C5A46D]/40 bg-[#1A1A1A] transition duration-300 hover:-translate-y-2 hover:border-[#C5A46D]">
-
-            <div class="flex h-52 items-center justify-center bg-[#252525]">
-                <span class="text-6xl font-black text-[#C5A46D]">02</span>
+        <article class="project-card">
+            <div class="project-image">
+                <img
+                    src="/images/projects/creative-dance.svg"
+                    alt="Two contemporary dancers moving together against an abstract backdrop"
+                    width="1200"
+                    height="700"
+                    loading="lazy"
+                />
             </div>
-
-            <div class="p-7">
-                <p class="mb-3 text-xs font-bold tracking-widest text-[#C5A46D]">
-                    CHOREOGRAPHY
-                </p>
-
-                <h3 class="mb-3 text-2xl font-bold">
-                    Creative Dance
-                </h3>
-
-                <p class="leading-7 text-gray-400">
+            <div class="project-copy">
+                <p class="project-category">CHOREOGRAPHY</p>
+                <h3>Creative Dance</h3>
+                <p>
                     We develop original dance routines that combine rhythm, expression, and artistic creativity.
                 </p>
             </div>
-        </div>
+        </article>
 
-        <!-- Project 3 -->
-        <div class="group overflow-hidden border border-[#C5A46D]/40 bg-[#1A1A1A] transition duration-300 hover:-translate-y-2 hover:border-[#C5A46D]">
-
-            <div class="flex h-52 items-center justify-center bg-[#252525]">
-                <span class="text-6xl font-black text-[#C5A46D]">03</span>
+        <article class="project-card">
+            <div class="project-image">
+                <img
+                    src="/images/projects/creative-production.svg"
+                    alt="A dance ensemble performing together on a warmly lit stage"
+                    width="1200"
+                    height="700"
+                    loading="lazy"
+                />
             </div>
-
-            <div class="p-7">
-                <p class="mb-3 text-xs font-bold tracking-widest text-[#C5A46D]">
-                    ARTISTIC DIRECTION
-                </p>
-
-                <h3 class="mb-3 text-2xl font-bold">
-                    Creative Production
-                </h3>
-
-                <p class="leading-7 text-gray-400">
+            <div class="project-copy">
+                <p class="project-category">ARTISTIC DIRECTION</p>
+                <h3>Creative Production</h3>
+                <p>
                     We work together to develop concepts and organize creative presentations.
                 </p>
             </div>
-        </div>
-
+        </article>
     </div>
-
 </section>
+
+<style>
+    .projects-section {
+        padding: clamp(64px, 9vw, 112px) 24px;
+        background: #111111;
+        color: #f3efe7;
+    }
+
+    .projects-heading {
+        max-width: 720px;
+        margin: 0 auto 48px;
+        text-align: center;
+    }
+
+    .projects-eyebrow {
+        margin: 0 0 14px;
+        color: #c5a46d;
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.24em;
+    }
+
+    .projects-heading h2 {
+        margin: 0;
+        color: #f3efe7;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 500;
+        letter-spacing: -0.05em;
+        line-height: 1.1;
+    }
+
+    .projects-intro {
+        margin: 16px 0 0;
+        color: #b8b4b1;
+        line-height: 1.7;
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        max-width: 1120px;
+        margin: 0 auto;
+        gap: 24px;
+    }
+
+    .project-card {
+        min-width: 0;
+        overflow: hidden;
+        border: 1px solid rgba(197, 164, 109, 0.4);
+        background: #1a1a1a;
+        transition: border-color 180ms ease, transform 180ms ease;
+    }
+
+    .project-card:hover {
+        transform: translateY(-5px);
+        border-color: #c5a46d;
+    }
+
+    .project-image {
+        overflow: hidden;
+        aspect-ratio: 12 / 7;
+        background: #252525;
+    }
+
+    .project-image img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 220ms ease;
+    }
+
+    .project-card:hover .project-image img {
+        transform: scale(1.04);
+    }
+
+    .project-copy {
+        padding: 24px;
+    }
+
+    .project-category {
+        margin: 0 0 10px;
+        color: #c5a46d;
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+    }
+
+    .project-copy h3 {
+        margin: 0 0 10px;
+        color: #f3efe7;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+    .project-copy > p:last-child {
+        margin: 0;
+        color: #b8b4b1;
+        font-size: 0.92rem;
+        line-height: 1.75;
+    }
+
+    @media (max-width: 900px) {
+        .projects-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media (max-width: 600px) {
+        .projects-section {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+
+        .projects-heading {
+            margin-bottom: 32px;
+        }
+
+        .projects-grid {
+            grid-template-columns: 1fr;
+            max-width: 440px;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .project-card,
+        .project-image img {
+            transition: none;
+        }
+    }
+</style>
