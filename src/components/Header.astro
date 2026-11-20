@@ -1,0 +1,200 @@
+
+<header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+        <a href="#home" class="brand" aria-label="JOCO Creative Arts, home">
+            <span class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 64 64" role="presentation">
+                    <defs>
+                        <linearGradient id="brand-gold" x1="12" y1="52" x2="53" y2="10" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#9a783f" />
+                            <stop offset=".55" stop-color="#f0d7a4" />
+                            <stop offset="1" stop-color="#c5a46d" />
+                        </linearGradient>
+                    </defs>
+                    <path class="orbit" d="M17 8a27 27 0 0 1 36 10M54 43a27 27 0 0 1-37 13" />
+                    <path class="monogram" d="M11 49c5-6 10-17 15-17 6 0 5 15 10 16 6 1 7-15 13-16 3 0 5 7 7 11" />
+                    <path class="gesture" d="M33 23c-7 1-12-6-18-11m19 11c8 1 13-5 18-12M33 23c-2 5-4 9-7 13m7-13c1 6 4 10 9 14m-17-1c-4 4-7 8-9 12m26-11c3 2 6 5 8 9" />
+                    <circle class="head" cx="34" cy="17" r="3.7" />
+                    <path class="spark" d="m13 23 1.4 3.2 3.1 1.3-3.1 1.4-1.4 3.1-1.3-3.1-3.2-1.4 3.2-1.3zM49 26l1 2.2 2.2 1-2.2 1-1 2.2-1-2.2-2.2-1 2.2-1z" />
+                </svg>
+            </span>
+            <span class="brand-copy">
+                <strong>JOCO</strong>
+                <small>CREATIVE ARTS</small>
+            </span>
+        </a>
+
+        <div class="nav-links">
+            <a href="#home">HOME</a>
+            <a href="#services">SERVICES</a>
+            <a href="#about">ABOUT</a>
+            <a href="#projects">PROJECTS</a>
+            <a href="#contact">CONTACT</a>
+        </div>
+    </nav>
+</header>
+
+<style>
+    .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: #111111;
+        color: #ffffff;
+        border-bottom: 2px solid #c5a46d;
+    }
+
+    .nav {
+        min-height: 82px;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 12px 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+    }
+
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #ffffff;
+        text-decoration: none;
+        flex-shrink: 0;
+    }
+
+    .brand-mark {
+        width: 58px;
+        height: 58px;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        border: 1px solid rgba(197, 164, 109, 0.75);
+        border-radius: 50%;
+        background: radial-gradient(circle at 35% 30%, #29251e, #111111 72%);
+    }
+
+    .brand-mark svg {
+        width: 54px;
+        height: 54px;
+        overflow: visible;
+    }
+
+    .brand-mark .orbit,
+    .brand-mark .gesture,
+    .brand-mark .monogram {
+        fill: none;
+        stroke: url(#brand-gold);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+
+    .brand-mark .orbit {
+        stroke-width: 1;
+        opacity: 0.8;
+    }
+
+    .brand-mark .gesture {
+        stroke-width: 1.8;
+    }
+
+    .brand-mark .monogram {
+        stroke-width: 2.6;
+    }
+
+    .brand-mark .head {
+        fill: url(#brand-gold);
+    }
+
+    .brand-mark .spark {
+        fill: #f0d7a4;
+        opacity: 0.9;
+    }
+
+    .brand-copy {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.05;
+    }
+
+    .brand-copy strong {
+        font-size: 18px;
+        letter-spacing: 0.16em;
+    }
+
+    .brand-copy small {
+        margin-top: 5px;
+        color: #c5a46d;
+        font-size: 10px;
+        letter-spacing: 0.16em;
+    }
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 22px;
+    }
+
+    .nav-links a {
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 800;
+        text-decoration: none;
+        transition: color 160ms ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+        color: #c5a46d;
+    }
+
+    @media (max-width: 720px) {
+        .nav {
+            min-height: auto;
+            padding: 10px 16px;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-copy {
+            display: flex;
+        }
+
+        .brand-copy strong {
+            font-size: 15px;
+            letter-spacing: 0.12em;
+        }
+
+        .brand-copy small {
+            display: none;
+        }
+
+        .brand-mark {
+            width: 44px;
+            height: 44px;
+        }
+
+        .brand-mark svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        .nav-links {
+            flex: 1;
+            gap: 12px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .nav-links::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-links a {
+            white-space: nowrap;
+            font-size: 11px;
+        }
+    }
+</style>
