@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" fill="none">
+  <defs>
+    <linearGradient id="flow-bg" x1="0" y1="0" x2="1200" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#24363B"/>
+      <stop offset="1" stop-color="#202238"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#flow-bg)" d="M0 0h1200v700H0z"/>
+  <path stroke="#F3C66B" stroke-opacity=".48" stroke-width="4" stroke-dasharray="10 12" d="M365 347h165m170 0h132"/>
+  <path fill="#F3EFE7" d="m518 333 24 14-24 14zM821 333l24 14-24 14z"/>
+  <rect x="72" y="116" width="294" height="466" rx="16" fill="#11131D" stroke="#C5A46D" stroke-width="3"/>
+  <rect x="89" y="144" width="260" height="410" rx="8" fill="#F3EFE7"/>
+  <rect x="89" y="144" width="260" height="34" rx="8" fill="#191A24"/>
+  <circle cx="107" cy="161" r="4" fill="#ED6A4E"/>
+  <circle cx="122" cy="161" r="4" fill="#F3C66B"/>
+  <rect x="112" y="202" width="214" height="116" rx="9" fill="#63B8A7" fill-opacity=".52"/>
+  <rect x="112" y="340" width="142" height="12" rx="6" fill="#191A24" fill-opacity=".72"/>
+  <rect x="112" y="364" width="202" height="8" rx="4" fill="#191A24" fill-opacity=".26"/>
+  <rect x="112" y="384" width="182" height="8" rx="4" fill="#191A24" fill-opacity=".26"/>
+  <rect x="112" y="416" width="214" height="44" rx="8" fill="#ED6A4E"/>
+  <rect x="112" y="474" width="214" height="44" rx="8" fill="#E8E1D6"/>
+  <rect x="530" y="116" width="294" height="466" rx="16" fill="#11131D" stroke="#C5A46D" stroke-width="3"/>
+  <rect x="547" y="144" width="260" height="410" rx="8" fill="#F3EFE7"/>
+  <rect x="547" y="144" width="260" height="34" rx="8" fill="#191A24"/>
+  <circle cx="565" cy="161" r="4" fill="#ED6A4E"/>
+  <circle cx="580" cy="161" r="4" fill="#F3C66B"/>
+  <rect x="570" y="202" width="214" height="78" rx="9" fill="#ED6A4E" fill-opacity=".72"/>
+  <rect x="570" y="301" width="166" height="12" rx="6" fill="#191A24" fill-opacity=".72"/>
+  <rect x="570" y="326" width="202" height="8" rx="4" fill="#191A24" fill-opacity=".26"/>
+  <rect x="570" y="346" width="182" height="8" rx="4" fill="#191A24" fill-opacity=".26"/>
+  <rect x="570" y="382" width="214" height="92" rx="9" fill="#63B8A7" fill-opacity=".32"/>
+  <rect x="570" y="490" width="214" height="44" rx="8" fill="#191A24"/>
+  <rect x="844" y="116" width="284" height="466" rx="16" fill="#11131D" stroke="#C5A46D" stroke-width="3"/>
+  <rect x="861" y="144" width="250" height="410" rx="8" fill="#F3EFE7"/>
+  <rect x="861" y="144" width="250" height="34" rx="8" fill="#191A24"/>
+  <circle cx="879" cy="161" r="4" fill="#ED6A4E"/>
+  <circle cx="894" cy="161" r="4" fill="#F3C66B"/>
+  <circle cx="986" cy="249" r="51" fill="#C5A46D" fill-opacity=".55"/>
+  <rect x="884" y="322" width="204" height="12" rx="6" fill="#191A24" fill-opacity=".72"/>
+  <rect x="884" y="348" width="204" height="8" rx="4" fill="#191A24" fill-opacity=".26"/>
+  <rect x="884" y="368" width="176" height="8" rx="4" fill="#191A24" fill-opacity=".26"/>
+  <rect x="884" y="407" width="204" height="44" rx="8" fill="#63B8A7"/>
+  <rect x="884" y="465" width="204" height="44" rx="8" fill="#E8E1D6"/>
+  <text x="73" y="78" fill="#F3EFE7" font-family="Arial,sans-serif" font-size="17" letter-spacing="4">USER FLOW · INTERACTIVE PROTOTYPE</text>
+</svg>

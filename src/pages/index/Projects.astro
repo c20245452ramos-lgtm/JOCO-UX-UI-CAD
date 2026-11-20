@@ -1,81 +1,218 @@
 <section id="projects" class="projects-section">
     <div class="projects-heading">
-        <p class="projects-kicker">JOCO · FESTIVAL CONCEPTS</p>
-        <h2>Projects in motion.</h2>
-        <p>
-            Folk-dance ideas inspired by tradition, shaped for the stage, and made
-            to bring communities together.
+        <p class="projects-eyebrow">OUR PORTFOLIO</p>
+        <h2>Featured Projects.</h2>
+        <p class="projects-intro">
+            A selection of our AutoCAD drafting, interface design, and digital prototyping work.
         </p>
     </div>
 
-    <div class="project-grid">
+    <div class="projects-grid">
         <article class="project-card">
-            <a class="project-image" href="#services" aria-label="Explore festival choreography services">
+            <div class="project-image">
                 <img
-                    src="/images/folk-festival.svg"
-                    alt="A folk dancer in a bright, flowing costume performs under festival bunting."
+                    src="/images/autocad-workspace.jpg"
+                    alt="A designer viewing a detailed CAD plan on a computer monitor."
                     width="1200"
-                    height="900"
+                    height="800"
                     loading="lazy"
                 />
-            </a>
-            <div class="project-content">
-                <p class="project-category">CONCEPT 01 · FESTIVAL CHOREOGRAPHY</p>
-                <h3>Festival Dance Showcase</h3>
+            </div>
+            <div class="project-copy">
+                <p class="project-category">AUTOCAD DRAFTING</p>
+                <h3>Technical Space Plan</h3>
                 <p>
-                    A high-energy group performance built around expressive movement,
-                    colorful costumes, and a shared festival rhythm.
+                    Detailed layouts and technical drawings organize spaces with clarity and dimensional accuracy.
                 </p>
-                <a class="project-action" href="#services">
-                    Explore choreography <span aria-hidden="true">→</span>
-                </a>
+                <small class="project-photo-credit">
+                    Photo via
+                    <a href="https://unsplash.com/" target="_blank" rel="noreferrer">Unsplash</a>
+                </small>
             </div>
         </article>
 
         <article class="project-card">
-            <a class="project-image" href="#services" aria-label="Explore folk-dance artistic direction">
+            <div class="project-image">
                 <img
-                    src="/images/folk-duet.svg"
-                    alt="Two folk dancers perform together beneath colorful festival decorations."
-                    width="720"
-                    height="460"
+                    src="/images/projects/uiux-interface.svg"
+                    alt="A modern user interface mockup with a phone screen and dashboard cards"
+                    width="1200"
+                    height="700"
                     loading="lazy"
                 />
-            </a>
-            <div class="project-content">
-                <p class="project-category">CONCEPT 02 · FOLK DANCE</p>
-                <h3>Tradition in Dialogue</h3>
+            </div>
+            <div class="project-copy">
+                <p class="project-category">UI/UX DESIGN</p>
+                <h3>Digital Interface</h3>
                 <p>
-                    A duet concept that brings traditional steps and contemporary
-                    staging together through movement and storytelling.
+                    Clear visual hierarchy and thoughtful navigation make key features simple to find and use.
                 </p>
-                <a class="project-action" href="#services">
-                    Explore artistic direction <span aria-hidden="true">→</span>
-                </a>
             </div>
         </article>
 
         <article class="project-card">
-            <a class="project-image" href="#contact" aria-label="Plan a festival procession">
+            <div class="project-image">
                 <img
-                    src="/images/folk-procession.svg"
-                    alt="A group of folk dancers in vivid costumes move together in a festival procession."
-                    width="640"
-                    height="420"
+                    src="/images/projects/interactive-prototype.svg"
+                    alt="A linked set of digital screens showing an interactive user journey"
+                    width="1200"
+                    height="700"
                     loading="lazy"
                 />
-            </a>
-            <div class="project-content">
-                <p class="project-category">CONCEPT 03 · COMMUNITY FESTIVAL</p>
-                <h3>Festival Procession</h3>
+            </div>
+            <div class="project-copy">
+                <p class="project-category">DIGITAL PROTOTYPING</p>
+                <h3>Interactive User Flow</h3>
                 <p>
-                    A parade-ready performance concept for coordinated dancers,
-                    joyful music, and a lively community celebration.
+                    Clickable prototypes help explore user journeys and refine ideas before development.
                 </p>
-                <a class="project-action" href="#contact">
-                    Discuss a project <span aria-hidden="true">→</span>
-                </a>
             </div>
         </article>
     </div>
 </section>
+
+<style>
+    .projects-section {
+        padding: clamp(64px, 9vw, 112px) 24px;
+        background: #111111;
+        color: #f3efe7;
+    }
+
+    .projects-heading {
+        max-width: 720px;
+        margin: 0 auto 48px;
+        text-align: center;
+    }
+
+    .projects-eyebrow {
+        margin: 0 0 14px;
+        color: #c5a46d;
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.24em;
+    }
+
+    .projects-heading h2 {
+        margin: 0;
+        color: #f3efe7;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 500;
+        letter-spacing: -0.05em;
+        line-height: 1.1;
+    }
+
+    .projects-intro {
+        margin: 16px 0 0;
+        color: #b8b4b1;
+        line-height: 1.7;
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        max-width: 1120px;
+        margin: 0 auto;
+        gap: 24px;
+    }
+
+    .project-card {
+        min-width: 0;
+        overflow: hidden;
+        border: 1px solid rgba(197, 164, 109, 0.4);
+        background: #1a1a1a;
+        transition: border-color 180ms ease, transform 180ms ease;
+    }
+
+    .project-card:hover {
+        transform: translateY(-5px);
+        border-color: #c5a46d;
+    }
+
+    .project-image {
+        overflow: hidden;
+        aspect-ratio: 12 / 7;
+        background: #252525;
+    }
+
+    .project-image img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 220ms ease;
+    }
+
+    .project-card:hover .project-image img {
+        transform: scale(1.04);
+    }
+
+    .project-copy {
+        padding: 24px;
+    }
+
+    .project-category {
+        margin: 0 0 10px;
+        color: #c5a46d;
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+    }
+
+    .project-copy h3 {
+        margin: 0 0 10px;
+        color: #f3efe7;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+    .project-copy > p:last-child {
+        margin: 0;
+        color: #b8b4b1;
+        font-size: 0.92rem;
+        line-height: 1.75;
+    }
+
+    .project-photo-credit {
+        display: block;
+        margin-top: 16px;
+        color: #b8b4b1;
+        font-size: 0.72rem;
+    }
+
+    .project-photo-credit a {
+        color: #c5a46d;
+        text-underline-offset: 3px;
+    }
+
+    @media (max-width: 900px) {
+        .projects-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media (max-width: 600px) {
+        .projects-section {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+
+        .projects-heading {
+            margin-bottom: 32px;
+        }
+
+        .projects-grid {
+            grid-template-columns: 1fr;
+            max-width: 440px;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .project-card,
+        .project-image img {
+            transition: none;
+        }
+    }
+</style>

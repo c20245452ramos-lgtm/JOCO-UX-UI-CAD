@@ -8,52 +8,252 @@
         </p>
 
         <h2 class="h-fit p-2 text-4xl font-black uppercase text-white md:text-6xl">
-            About The <span class="text-[#C5A46D]">Artist.</span>
+            About <span class="text-[#C5A46D]">Us.</span>
         </h2>
     </div>
 
     <div>
         <p class="text-xl font-bold leading-relaxed text-white">
-            I AM A CHOREOGRAPHER AND ARTISTIC DIRECTOR
-            PASSIONATE ABOUT CREATING MEANINGFUL
-            PERFORMANCES THROUGH MOVEMENT AND EXPRESSION.
+            WE ARE AUTOCAD DRAFTERS AND UI/UX DESIGNERS
+            PASSIONATE ABOUT TURNING IDEAS INTO CLEAR,
+            USEFUL, AND THOUGHTFUL DESIGNS.
         </p>
 
         <p class="mt-5 leading-7 text-gray-400">
-            I believe that dance is more than just movement.
-            It is a powerful form of storytelling that connects
-            emotions, creativity, and people. Through choreography
-            and artistic direction, I transform ideas into
-            unforgettable performances.
+            We bring technical precision and user-centered thinking
+            together. From detailed AutoCAD drawings to intuitive
+            digital interfaces, we transform concepts into practical,
+            polished experiences.
         </p>
 
         <div class="mt-6 flex flex-wrap gap-3">
             <span class="border border-[#C5A46D] px-4 py-2 font-bold text-[#C5A46D]">
-                CHOREOGRAPHY
+                AUTOCAD DRAFTING
             </span>
 
             <span class="border border-[#C5A46D] px-4 py-2 font-bold text-[#C5A46D]">
-                ARTISTIC DIRECTION
+                UI/UX DESIGN
             </span>
 
             <span class="border border-[#C5A46D] px-4 py-2 font-bold text-[#C5A46D]">
-                DANCE PRODUCTION
+                WIREFRAMING
             </span>
 
             <span class="border border-[#C5A46D] px-4 py-2 font-bold text-[#C5A46D]">
-                CREATIVE DESIGN
+                PROTOTYPING
             </span>
         </div>
 
         <figure class="about-art">
             <img
-                src="/images/folk-duet.svg"
-                alt="Two folk dancers in colorful costumes perform together at a festival."
-                width="720"
-                height="460"
+                src="/images/design-workspace.jpg"
+                alt="A laptop displaying code on a bright desk in a digital design workspace."
+                width="1200"
+                height="700"
                 loading="lazy"
             />
-            <figcaption>TRADITION IN MOTION</figcaption>
+            <figcaption>UI/UX DESIGN WORKSPACE · PHOTO VIA UNSPLASH</figcaption>
         </figure>
     </div>
 </section>
+
+<section class="about-showcase" aria-labelledby="about-showcase-title">
+    <div class="about-showcase-heading">
+        <p>OUR DESIGN PRACTICE</p>
+        <h2 id="about-showcase-title">Precision meets usability.</h2>
+    </div>
+
+    <div class="about-card-grid" id="about-card-grid">
+        <article class="about-detail-card">
+            <p class="about-card-number">01 — AUTOCAD</p>
+            <h3>Technical Drafting</h3>
+            <p>
+                We create clear, detailed technical drawings and plans with careful attention to dimensions, structure, and accuracy.
+            </p>
+        </article>
+
+        <article class="about-detail-card about-detail-card-accent">
+            <p class="about-card-number">02 — UI/UX</p>
+            <h3>Human-Centered Interfaces</h3>
+            <p>
+                We design intuitive layouts, user flows, and prototypes that make digital products easier and more enjoyable to use.
+            </p>
+        </article>
+    </div>
+
+    <button class="about-card-switch" type="button" aria-controls="about-card-grid" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 7h13l-3-3m3 3-3 3M17 17H4l3 3m-3-3 3-3" />
+        </svg>
+        Switch card positions
+    </button>
+</section>
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        gsap.fromTo(
+            "#about .about-art",
+            { autoAlpha: 0, y: 24 },
+            {
+                autoAlpha: 1,
+                y: 0,
+                duration: 0.75,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: "#about .about-art",
+                    start: "top 82%",
+                    end: "bottom 18%",
+                    toggleActions: "play reverse play reverse",
+                },
+            },
+        );
+    }
+
+    const aboutCardGrid = document.querySelector<HTMLElement>("#about-card-grid");
+    const aboutCardSwitch = document.querySelector<HTMLButtonElement>(".about-card-switch");
+
+    aboutCardSwitch?.addEventListener("click", () => {
+        if (!aboutCardGrid || !aboutCardSwitch || aboutCardGrid.children.length !== 2) return;
+
+        aboutCardGrid.insertBefore(aboutCardGrid.children[1], aboutCardGrid.children[0]);
+        const isSwapped = aboutCardSwitch.getAttribute("aria-pressed") !== "true";
+        aboutCardSwitch.setAttribute("aria-pressed", String(isSwapped));
+    });
+</script>
+
+<style>
+    .about-showcase {
+        padding: clamp(56px, 8vw, 104px) max(24px, calc((100vw - 1120px) / 2));
+        background: var(--paper-deep);
+        color: var(--ink);
+    }
+
+    .about-showcase-heading {
+        max-width: 700px;
+        margin-bottom: 32px;
+    }
+
+    .about-showcase-heading > p {
+        margin: 0 0 12px;
+        color: var(--coral);
+        font-size: 0.7rem;
+        font-weight: 900;
+        letter-spacing: 0.2em;
+    }
+
+    .about-showcase-heading h2 {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2.4rem, 5vw, 4rem);
+        font-weight: 500;
+        letter-spacing: -0.05em;
+        line-height: 1.05;
+    }
+
+    .about-card-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .about-detail-card {
+        min-height: 240px;
+        border: 1px solid rgba(25, 26, 36, 0.16);
+        padding: clamp(24px, 4vw, 40px);
+        background: var(--paper);
+        transition: border-color 180ms ease, transform 180ms ease;
+    }
+
+    .about-detail-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--coral);
+    }
+
+    .about-detail-card-accent {
+        background: var(--fixed-ink);
+        color: var(--fixed-paper);
+    }
+
+    .about-card-number {
+        margin: 0 0 24px;
+        color: var(--coral);
+        font-size: 0.68rem;
+        font-weight: 900;
+        letter-spacing: 0.16em;
+    }
+
+    .about-detail-card h3 {
+        margin: 0 0 12px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.6rem, 3vw, 2.2rem);
+        font-weight: 500;
+        line-height: 1.15;
+    }
+
+    .about-detail-card > p:last-child {
+        max-width: 480px;
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.75;
+    }
+
+    .about-detail-card-accent > p:last-child {
+        color: rgba(243, 239, 231, 0.72);
+    }
+
+    .about-card-switch {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 24px;
+        border: 1px solid var(--ink);
+        padding: 12px 16px;
+        background: transparent;
+        color: var(--ink);
+        font: inherit;
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        cursor: pointer;
+        transition: background 160ms ease, color 160ms ease;
+    }
+
+    .about-card-switch:hover,
+    .about-card-switch[aria-pressed="true"] {
+        background: var(--ink);
+        color: var(--paper);
+    }
+
+    .about-card-switch:focus-visible {
+        outline: 2px solid var(--coral);
+        outline-offset: 3px;
+    }
+
+    .about-card-switch svg {
+        width: 18px;
+        height: 18px;
+        fill: none;
+        stroke: currentColor;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1.7;
+    }
+
+    @media (max-width: 640px) {
+        .about-card-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .about-detail-card,
+        .about-card-switch {
+            transition: none;
+        }
+    }
+</style>

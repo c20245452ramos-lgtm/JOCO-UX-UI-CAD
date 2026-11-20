@@ -9,11 +9,28 @@ import Footer from "../components/Footer.astro";
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
         <meta name="theme-color" content="#191a24" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta
             name="description"
-            content="JOCO Creative Arts — choreography, artistic direction, and dance production."
+            content="JOCO — AutoCAD drafting, UI/UX design, and digital product design."
         />
-        <title>JOCO — Creative Arts & Movement</title>
+        <script is:inline>
+            (() => {
+                let theme = "light";
+                try {
+                    const savedTheme = localStorage.getItem("theme");
+                    theme = savedTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+                } catch {
+                    theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+                }
+                document.documentElement.dataset.theme = theme;
+                document.querySelector('meta[name="theme-color"]')?.setAttribute(
+                    "content",
+                    theme === "dark" ? "#191a24" : "#f3efe7"
+                );
+            })();
+        </script>
+        <title>JOCO — AutoCAD &amp; UI/UX Design</title>
     </head>
     <body>
         <Header />
@@ -33,6 +50,16 @@ import Footer from "../components/Footer.astro";
         --coral: #ed6a4e;
         --gold: #c5a46d;
         --muted: #77736f;
+        --fixed-ink: #191a24;
+        --fixed-paper: #f3efe7;
+    }
+
+    :root[data-theme="dark"] {
+        color-scheme: dark;
+        --ink: #f3efe7;
+        --paper: #191a24;
+        --paper-deep: #232530;
+        --muted: #bbb3a7;
     }
 
     *,
@@ -92,8 +119,8 @@ import Footer from "../components/Footer.astro";
     #home .card:first-child {
         z-index: 1;
         border-radius: 20px 0 0 20px;
-        background: var(--ink);
-        color: var(--paper);
+        background: var(--fixed-ink);
+        color: var(--fixed-paper);
     }
 
     #home .card:first-child::after {
@@ -166,8 +193,8 @@ import Footer from "../components/Footer.astro";
         align-items: flex-start;
         border: 0;
         border-radius: 0 20px 20px 0;
-        background: var(--ink);
-        color: var(--paper);
+        background: var(--fixed-ink);
+        color: var(--fixed-paper);
     }
 
     #home .card:last-child::before {
@@ -200,7 +227,7 @@ import Footer from "../components/Footer.astro";
 
     #home h2 {
         margin: 26px 0 0;
-        color: var(--paper);
+        color: var(--fixed-paper);
         font-family: Georgia, "Times New Roman", serif;
         font-size: clamp(3.2rem, 6.7vw, 6rem);
         font-weight: 500;
@@ -212,7 +239,7 @@ import Footer from "../components/Footer.astro";
         margin-top: 30px;
         border-top: 1px solid rgba(243, 239, 231, 0.4);
         padding-top: 14px;
-        color: var(--paper);
+        color: var(--fixed-paper);
         font-size: 0.65rem;
         font-weight: 900;
         letter-spacing: 0.18em;
@@ -312,6 +339,10 @@ import Footer from "../components/Footer.astro";
         position: absolute;
         right: 12px;
         bottom: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 6px;
+        max-width: calc(100% - 24px);
         border: 1px solid rgba(243, 239, 231, 0.55);
         padding: 8px 10px;
         background: rgba(25, 26, 36, 0.78);
@@ -319,6 +350,11 @@ import Footer from "../components/Footer.astro";
         font-size: 0.6rem;
         font-weight: 800;
         letter-spacing: 0.14em;
+    }
+
+    #about .about-art figcaption a {
+        color: inherit;
+        text-underline-offset: 2px;
     }
 
     #about span {
@@ -332,8 +368,8 @@ import Footer from "../components/Footer.astro";
 
     #services.stripe {
         padding: clamp(64px, 9vw, 120px) max(24px, calc((100vw - 1120px) / 2));
-        background: var(--ink);
-        color: var(--paper);
+        background: var(--fixed-ink);
+        color: var(--fixed-paper);
     }
 
     #services > p:first-child {
@@ -348,7 +384,7 @@ import Footer from "../components/Footer.astro";
         margin: 0 0 16px;
         border: 0;
         padding: 0;
-        color: var(--paper);
+        color: var(--fixed-paper);
         font-family: Georgia, "Times New Roman", serif;
         font-size: clamp(3rem, 6vw, 5.5rem);
         font-weight: 500;
@@ -474,7 +510,7 @@ import Footer from "../components/Footer.astro";
         border: 1px solid rgba(243, 239, 231, 0.16);
         padding: 0 0 26px;
         background: #232530;
-        color: var(--paper);
+        color: var(--fixed-paper);
     }
 
     #services .card > img {
@@ -784,8 +820,8 @@ import Footer from "../components/Footer.astro";
         gap: 18px;
         border-top: 0;
         padding: 28px max(24px, calc((100vw - 1120px) / 2));
-        background: var(--ink);
-        color: var(--paper);
+        background: var(--fixed-ink);
+        color: var(--fixed-paper);
         font-size: 0.75rem;
     }
 
