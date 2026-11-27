@@ -1,60 +1,177 @@
 
-<section id="process" class="bg-[#111111] px-6 py-20 text-white md:px-12">
-
-    <div class="mx-auto mb-14 max-w-3xl text-center">
-        <p class="mb-3 text-sm font-bold tracking-[0.3em] text-[#C5A46D]">
-            HOW WE WORK
-        </p>
-
-        <h2 class="mb-5 text-4xl font-black md:text-5xl">
-            Our Design Process.
-        </h2>
-
-        <p class="text-gray-400">
-            We move from a clear understanding of your needs to accurate drawings and thoughtful digital experiences.
-        </p>
+<section id="process" class="process-section">
+    <div class="process-heading">
+        <p class="process-eyebrow">HOW WE WORK</p>
+        <h2>Our Design Process.</h2>
     </div>
 
-    <div class="mx-auto grid max-w-6xl gap-6 md:grid-cols-3">
+    <div class="process-layout">
+        <figure class="process-visual">
+            <img
+                src="/images/process-design.png"
+                alt="Concept preview for a structured digital design process."
+                width="960"
+                height="540"
+                loading="lazy"
+            />
+            <figcaption>FROM IDEA TO DELIVERY</figcaption>
+        </figure>
 
-        <!-- Step 1 -->
-        <div class="border border-[#C5A46D]/40 bg-[#1A1A1A] p-8 transition duration-300 hover:-translate-y-2 hover:border-[#C5A46D]">
-            <p class="mb-6 text-5xl font-black text-[#C5A46D]">01</p>
+        <div class="process-steps">
+            <article class="process-step">
+                <div class="process-number">01</div>
+                <div>
+                    <p class="process-label">DISCOVER</p>
+                    <h3>Discover &amp; Define</h3>
+                    <p>We learn about your goals, users, and requirements, then agree on the scope and direction of the work.</p>
+                </div>
+            </article>
 
-            <h3 class="mb-4 text-2xl font-bold">
-                Discover & Define
-            </h3>
+            <article class="process-step">
+                <div class="process-number">02</div>
+                <div>
+                    <p class="process-label">CREATE</p>
+                    <h3>Draft &amp; Design</h3>
+                    <p>We develop precise AutoCAD drawings, user flows, and interface layouts, refining the details along the way.</p>
+                </div>
+            </article>
 
-            <p class="leading-7 text-gray-400">
-                We learn about your goals, users, and requirements, then agree on the scope and direction of the work.
-            </p>
+            <article class="process-step">
+                <div class="process-number">03</div>
+                <div>
+                    <p class="process-label">DELIVER</p>
+                    <h3>Prototype &amp; Deliver</h3>
+                    <p>We review the final drawings or interactive prototype together and prepare polished files for handoff.</p>
+                </div>
+            </article>
         </div>
-
-        <!-- Step 2 -->
-        <div class="border border-[#C5A46D]/40 bg-[#1A1A1A] p-8 transition duration-300 hover:-translate-y-2 hover:border-[#C5A46D]">
-            <p class="mb-6 text-5xl font-black text-[#C5A46D]">02</p>
-
-            <h3 class="mb-4 text-2xl font-bold">
-                Draft & Design
-            </h3>
-
-            <p class="leading-7 text-gray-400">
-                We develop precise AutoCAD drawings, user flows, and interface layouts, refining the details along the way.
-            </p>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="border border-[#C5A46D]/40 bg-[#1A1A1A] p-8 transition duration-300 hover:-translate-y-2 hover:border-[#C5A46D]">
-            <p class="mb-6 text-5xl font-black text-[#C5A46D]">03</p>
-
-            <h3 class="mb-4 text-2xl font-bold">
-                Prototype & Deliver
-            </h3>
-
-            <p class="leading-7 text-gray-400">
-                We review the final drawings or interactive prototype together and prepare polished files for handoff.
-            </p>
-        </div>
-
     </div>
 </section>
+
+<style>
+    .process-section {
+        padding: clamp(64px, 9vw, 112px) 24px;
+        background: #f3efe7;
+        color: #191a24;
+    }
+
+    .process-heading {
+        max-width: 1120px;
+        margin: 0 auto 36px;
+    }
+
+    .process-eyebrow {
+        margin: 0 0 12px;
+        color: #9a783f;
+        font-size: 0.72rem;
+        font-weight: 900;
+        letter-spacing: 0.24em;
+    }
+
+    .process-heading h2 {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        font-weight: 500;
+        letter-spacing: -0.055em;
+    }
+
+    .process-layout {
+        display: grid;
+        grid-template-columns: minmax(280px, 0.9fr) minmax(360px, 1.1fr);
+        max-width: 1120px;
+        margin: 0 auto;
+        border: 1px solid rgba(25, 26, 36, 0.16);
+    }
+
+    .process-visual {
+        position: relative;
+        min-height: 500px;
+        margin: 0;
+        overflow: hidden;
+        background: #191a24;
+    }
+
+    .process-visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.78) saturate(0.9);
+    }
+
+    .process-visual figcaption {
+        position: absolute;
+        left: 24px;
+        bottom: 24px;
+        border: 1px solid rgba(243, 239, 231, 0.5);
+        padding: 10px 14px;
+        background: rgba(25, 26, 36, 0.78);
+        color: #f3efe7;
+        font-size: 0.68rem;
+        font-weight: 900;
+        letter-spacing: 0.18em;
+    }
+
+    .process-steps {
+        background: #fffdf8;
+    }
+
+    .process-step {
+        display: grid;
+        grid-template-columns: 72px 1fr;
+        gap: 18px;
+        min-height: 166px;
+        align-items: start;
+        border-bottom: 1px solid rgba(25, 26, 36, 0.12);
+        padding: 28px clamp(24px, 4vw, 44px);
+    }
+
+    .process-step:last-child {
+        border-bottom: 0;
+    }
+
+    .process-number {
+        color: #c5a46d;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2.4rem, 4vw, 3.6rem);
+        line-height: 1;
+    }
+
+    .process-label {
+        margin: 0 0 6px;
+        color: #9a783f;
+        font-size: 0.66rem;
+        font-weight: 900;
+        letter-spacing: 0.18em;
+    }
+
+    .process-step h3 {
+        margin: 0 0 8px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.45rem, 2.5vw, 2rem);
+        font-weight: 500;
+    }
+
+    .process-step div > p:last-child {
+        margin: 0;
+        color: #67675f;
+        line-height: 1.65;
+    }
+
+    @media (max-width: 760px) {
+        .process-layout {
+            grid-template-columns: 1fr;
+        }
+
+        .process-visual {
+            min-height: 280px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .process-step {
+            grid-template-columns: 54px 1fr;
+            padding: 24px 20px;
+        }
+    }
+</style>
